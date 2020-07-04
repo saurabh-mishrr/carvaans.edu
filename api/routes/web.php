@@ -12,5 +12,13 @@
 */
 
 $router->get('/', function () use ($router) {
-    return Cache::get('hello');
+  return redirect()->route('api_home');
+});
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/', [
+      'as'  => 'api_home',
+      'uses' => 'ExampleController@home'
+    ]);
+
+    $router->get('/phpinfo', 'ExampleController@infoPhp');
 });

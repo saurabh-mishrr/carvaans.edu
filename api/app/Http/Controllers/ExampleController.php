@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 class ExampleController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @author Saurabh.Mishra
      */
-    public function __construct()
+    public function home()
     {
-        //
+        return response()->json([
+           'data' => 'Welcome to ' . config('app.name')
+        ]);
     }
 
-    //
+    public function infoPhp()
+    {
+        dd(phpinfo());
+    }
 }
