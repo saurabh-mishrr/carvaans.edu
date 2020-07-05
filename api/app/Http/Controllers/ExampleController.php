@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Roles;
 class ExampleController extends Controller
 {
     /**
@@ -16,6 +16,6 @@ class ExampleController extends Controller
 
     public function infoPhp()
     {
-        dd(phpinfo());
+//        dd(config('organizations.all_statuses'));
     }
 }

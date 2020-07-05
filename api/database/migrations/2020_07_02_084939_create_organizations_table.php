@@ -25,7 +25,7 @@ class CreateOrganizationsTable extends Migration
                 $table->uuid('uuid');
                 $table->string('logo')->nullable();
                 $table->boolean('active')->default(true);
-                $table->enum('status', \OrganizationStatus::constArray(['FREE_TIER', 'SUSPENDED', 'SUBSCRIBED', 'EXPIRED']))->default(\OrganizationStatus::const('FREE_TIER'));
+                $table->enum('status', \EOrgStatus::constArray(['FREE_TIER', 'SUSPENDED', 'SUBSCRIBED', 'EXPIRED']))->default(\EOrgStatus::const('FREE_TIER'));
                 $table->date('expiry_date');
                 $table->date('suspended_till')->nullable();
                 $table->timestamps(0);
@@ -42,7 +42,7 @@ class CreateOrganizationsTable extends Migration
     public function down()
     {
         if (config('app.env') == 'local') {
-            Schema::dropIfExists('organizations');
+            Schema::dropIfExists($this->table);
         }
     }
 }

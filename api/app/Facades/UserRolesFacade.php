@@ -4,7 +4,7 @@
 namespace App\Facades;
 
 
-class UserRoles extends \App\Core\EnumFacade
+class UserRolesFacade extends \App\Core\EnumFacade
 {
 
     /**

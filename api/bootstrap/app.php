@@ -24,8 +24,8 @@ $app = new Laravel\Lumen\Application(
 );
 
 $app->withFacades(true, [
-    App\Facades\OrganizationStatus::class => 'OrganizationStatus',
-    App\Facades\UserRoles::class => 'Roles',
+    App\Facades\OrganizationStatusFacade::class => 'EOrgStatus',
+    App\Facades\UserRolesFacade::class => 'ERoles',
 ]);
 
 $app->withEloquent();
@@ -96,7 +96,7 @@ $app->configure('cache');
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
+ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(App\Providers\EnumServiceProvider::class);

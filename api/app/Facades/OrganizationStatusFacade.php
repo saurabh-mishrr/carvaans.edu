@@ -2,7 +2,7 @@
 
 use App\Core\EnumFacade;
 
-class OrganizationStatus extends EnumFacade
+class OrganizationStatusFacade extends EnumFacade
 {
 
     /**

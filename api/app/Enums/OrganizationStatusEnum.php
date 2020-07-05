@@ -4,7 +4,7 @@
  * Class OrganizationStatus
  * @package App\Enums
  */
-class OrganizationStatus
+class OrganizationStatusEnum
 {
     private const FREE_TIER = 'free_tier'; //free trial
     private const SUBSCRIBED = 'subscribed'; //purchased
