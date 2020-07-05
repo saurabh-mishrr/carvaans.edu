@@ -1,8 +1,9 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use \App\Enums\OrganizationStatusEnum;
-use \App\Enums\UserRolesEnum;
+use App\Enums\OrganizationStatusEnum;
+use App\Enums\UserRolesEnum;
+use App\Enums\HttpErrorCodeEnum;
 class EnumServiceProvider extends ServiceProvider
 {
 
@@ -18,6 +19,10 @@ class EnumServiceProvider extends ServiceProvider
 
         $this->app->bind('user_roles', function ($app) {
             return new UserRolesEnum();
+        });
+
+        $this->app->bind('http_error_code', function ($app) {
+            return new HttpErrorCodeEnum();
         });
     }
 

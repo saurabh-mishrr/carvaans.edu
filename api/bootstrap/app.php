@@ -26,6 +26,7 @@ $app = new Laravel\Lumen\Application(
 $app->withFacades(true, [
     App\Facades\OrganizationStatusFacade::class => 'EOrgStatus',
     App\Facades\UserRolesFacade::class => 'ERoles',
+    App\Facades\HttpErrorCodeFacade::class => 'EHttpError',
 ]);
 
 $app->withEloquent();
@@ -65,6 +66,8 @@ $app->singleton(
 $app->configure('app');
 $app->configure('database');
 $app->configure('cache');
+$app->configure('pricing');
+$app->configure('mail');
 
 /*
 |--------------------------------------------------------------------------

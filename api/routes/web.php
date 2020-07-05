@@ -12,13 +12,16 @@
 */
 
 $router->get('/', function () use ($router) {
-  return redirect()->route('api_home');
+  return 'Welcome to '. config('app.name');
 });
-$router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/', [
-      'as'  => 'api_home',
-      'uses' => 'ExampleController@home'
-    ]);
 
-    $router->get('/phpinfo', 'ExampleController@infoPhp');
+//Auth required
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+});
+
+
+//No auth required
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->post('get_quote', 'PricingController@getQuote');
 });
