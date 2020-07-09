@@ -27,6 +27,7 @@ $app->withFacades(true, [
     App\Facades\OrganizationStatusFacade::class => 'EOrgStatus',
     App\Facades\UserRolesFacade::class => 'ERoles',
     App\Facades\HttpErrorCodeFacade::class => 'EHttpError',
+    App\Facades\UserStatusesFacade::class => 'EUserStatus',
 ]);
 
 $app->withEloquent();
@@ -84,9 +85,9 @@ $app->configure('mail');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+ $app->routeMiddleware([
+     'auth' => App\Http\Middleware\Authenticate::class,
+ ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -99,8 +100,8 @@ $app->configure('mail');
 |
 */
 
- $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(App\Providers\EnumServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);

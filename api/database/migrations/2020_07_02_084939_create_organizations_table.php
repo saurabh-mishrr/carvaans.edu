@@ -27,6 +27,7 @@ class CreateOrganizationsTable extends Migration
                 $table->boolean('active')->default(true);
                 $table->enum('status', \EOrgStatus::constArray(['FREE_TIER', 'SUSPENDED', 'SUBSCRIBED', 'EXPIRED']))->default(\EOrgStatus::const('FREE_TIER'));
                 $table->date('expiry_date');
+                $table->json('settings')->nullable();
                 $table->date('suspended_till')->nullable();
                 $table->timestamps(0);
             });

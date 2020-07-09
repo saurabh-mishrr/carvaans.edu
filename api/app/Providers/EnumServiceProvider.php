@@ -4,6 +4,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Enums\OrganizationStatusEnum;
 use App\Enums\UserRolesEnum;
 use App\Enums\HttpErrorCodeEnum;
+use App\Enums\UserStatusEnum;
 class EnumServiceProvider extends ServiceProvider
 {
 
@@ -23,6 +24,10 @@ class EnumServiceProvider extends ServiceProvider
 
         $this->app->bind('http_error_code', function ($app) {
             return new HttpErrorCodeEnum();
+        });
+
+        $this->app->bind('user_statuses', function ($app) {
+            return new UserStatusEnum();
         });
     }
 
